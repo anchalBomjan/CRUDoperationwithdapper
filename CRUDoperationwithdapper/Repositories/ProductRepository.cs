@@ -63,7 +63,7 @@ namespace CRUDoperationwithdapper.Repositories
             await connection.ExecuteAsync(sql, model);
             return model;
         }
-        public async Task<ProductModel> Update(ProductModel model)
+        public async Task<ProductModel> Update( ProductModel model)
         {
             model.UpdateOn = DateTime.Now;
             var sql = $@"UPDATE[dbo].[Products]

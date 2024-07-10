@@ -51,7 +51,13 @@ namespace CRUDoperationwithdapper.Controllers
             }
             return View();
         }
+        [HttpGet]
 
+        public async Task <IActionResult> Edit(Guid id) 
+        { var product= await productRepository.Find(id);
+            return View(product);
+        
+        }
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, ProductModel model)
         {
@@ -95,6 +101,8 @@ namespace CRUDoperationwithdapper.Controllers
             await productRepository.Remove(product);
             return RedirectToAction(nameof(Index));
         }
+
+
 
 
     }
