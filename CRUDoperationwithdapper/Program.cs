@@ -1,7 +1,12 @@
+using CRUDoperationwithdapper.Data;
+using CRUDoperationwithdapper.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<DapperDbContext, DapperDbContext>();
+builder.Services.AddTransient<Iproduct, ProductRepository>();
 
 var app = builder.Build();
 
