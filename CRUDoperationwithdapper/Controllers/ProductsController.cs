@@ -53,10 +53,11 @@ namespace CRUDoperationwithdapper.Controllers
         }
         [HttpGet]
 
-        public async Task <IActionResult> Edit(Guid id) 
-        { var product= await productRepository.Find(id);
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var product = await productRepository.Find(id);
             return View(product);
-        
+
         }
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, ProductModel model)
@@ -76,7 +77,6 @@ namespace CRUDoperationwithdapper.Controllers
 
 
         }
-
         public async Task<IActionResult> Delete(Guid id)
         {
             if (id == Guid.Empty)
@@ -92,21 +92,21 @@ namespace CRUDoperationwithdapper.Controllers
             }
             return View(product);
         }
+        // POST: Products/Delete/{id}
+        [HttpPost, ActionName("DeleteConfirmed")]
 
-        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmDelete(Guid id)
         {
             var product = await productRepository.Find(id);
             await productRepository.Remove(product);
             return RedirectToAction(nameof(Index));
+
+
+
+
+
+
         }
-
-
-
-
     }
-
-
-
-    }
+}

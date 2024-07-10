@@ -5,12 +5,12 @@ using System;
 
 namespace CRUDoperationwithdapper.Repositories
 {
-    public class ProductRepository:Iproduct
+    public class ProductRepository : Iproduct
     {
         private readonly DapperDbContext _dbContext;
         public ProductRepository(DapperDbContext context)
         {
-             _dbContext = context;
+            _dbContext = context;
         }
         public async Task<IEnumerable<ProductModel>> Get()
         {
@@ -63,7 +63,7 @@ namespace CRUDoperationwithdapper.Repositories
             await connection.ExecuteAsync(sql, model);
             return model;
         }
-        public async Task<ProductModel> Update( ProductModel model)
+        public async Task<ProductModel> Update(ProductModel model)
         {
             model.UpdateOn = DateTime.Now;
             var sql = $@"UPDATE[dbo].[Products]

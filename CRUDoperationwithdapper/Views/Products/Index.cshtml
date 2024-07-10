@@ -37,7 +37,10 @@
                             <td>
                                 <a href="@Url.Action("Details", "Products", new { id = item.ProductId })" class="btn btn-sm btn-info mr-1">Details</a>
                                 <a href="@Url.Action("Edit", "Products", new { id = item.ProductId })" class="btn btn-sm btn-warning mr-1">Edit</a>
+                          
+
                                 <a href="@Url.Action("Delete", "Products", new { id = item.ProductId })" class="btn btn-sm btn-danger">Delete</a>
+
                             </td>
                         </tr>
                     }

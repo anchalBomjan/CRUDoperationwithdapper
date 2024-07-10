@@ -1,0 +1,28 @@
+﻿@model CRUDoperationwithdapper.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Delete Product";
+}
+
+<h2 class="text-center mt-4 mb-4">@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Are you sure you want to delete this product?</h4>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.ProductName)</h5>
+                    <p class="card-text"><strong>Price:</strong> @Html.DisplayFor(model => model.Price)</p>
+                    <p class="card-text"><strong>Description:</strong> @Html.DisplayFor(model => model.ProductDescription)</p>
+                    <p class="card-text"><strong>Created On:</strong> @Html.DisplayFor(model => model.CreatedOn)</p>
+                    <p class="card-text"><strong>Updated On:</strong> @Html.DisplayFor(model => model.UpdateOn)</p>
+                    <form asp-action="DeleteConfirmed" asp-route-id="@Model.ProductId" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
