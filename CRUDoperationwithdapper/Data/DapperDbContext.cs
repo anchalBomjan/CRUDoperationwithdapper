@@ -11,7 +11,7 @@ namespace CRUDoperationwithdapper.Data
         public DapperDbContext(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connection = configuration.GetConnectionString("DefaultConnection");
+            _connection = configuration.GetConnectionString("DefaultConnection")!;
         }
         public IDbConnection CreateConnection() => new SqlConnection(_connection);
 

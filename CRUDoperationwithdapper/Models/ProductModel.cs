@@ -10,7 +10,7 @@ namespace CRUDoperationwithdapper.Models
         public string ProductName { get; set; }
         public decimal Price { get; set; }
 
-        [Display(Name = "Prodcut Description")]
+        [Display(Name = "Product Description")]
         public string ProductDescription { get; set; }
 
         [Display(Name = "Create Date")]
